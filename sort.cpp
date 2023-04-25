@@ -6,18 +6,20 @@ using namespace std;
 
 inline int partition(vector<int>& a, int l, int r) {
     int x = a[r], i = l - 1;
+    // i serves as a position holder
     for (int j = l; j < r; ++j) {
         if (a[j] <= x) {
             swap(a[++i], a[j]);
         }
     }
+    // a[i + 1] is sure to be larger than a[r]
     swap(a[i + 1], a[r]);
     return i + 1;
 }
 
 inline int randomPartition(vector<int>& a, int l, int r) {
-    printf("randomPartition[%d, %d]\n", l, r);
     int i = rand() % (r - l + 1) + l;
+    printf("randomPartition[%d, %d]: %d\n", l, r, i);
     swap(a[i], a[r]);
     return partition(a, l, r);
 }
@@ -25,7 +27,7 @@ inline int randomPartition(vector<int>& a, int l, int r) {
 inline void quick_sort(vector<int>& a, int l, int r) {
     int idx = randomPartition(a, l, r);
     printf("quick_sort idx = %d\n", idx);
-    if (idx == l || idx == r) {
+    if (r - l <= 1) {
         return;
     }
     quick_sort(a, l, idx);
