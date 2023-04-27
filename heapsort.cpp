@@ -1,6 +1,17 @@
 #include <iostream>
 #include <vector>
 
+// max-heap is a binary tree data structure in which the value of each node is greater than or equal to the values of its children nodes. The main property of a large-ended heap is that the root node always contains the maximum value of the heap.
+
+// Other properties of a large-ended heap include:
+
+// The height of the heap is logarithmic with respect to the number of elements stored in the heap.
+// Inserting a new element or deleting the maximum element from a large-ended heap can be performed in O(log n) time, where n is the number of elements in the heap.
+// A large-ended heap can be implemented using an array or a linked list data structure.
+// Large-ended heaps are commonly used in priority queues and sorting algorithms such as heapsort.
+// A large-ended heap can be transformed into a small-ended heap (min-heap) by changing the comparison operator used for the node values.
+// ? when the container is vector, the binary tree is auto-balanced to a heap. In other word, the rotation operation is conduced automatically.
+
 int upProcess(std::vector<int> &array, int k) {
     int k_parent;
     if (k % 2 == 0) {
