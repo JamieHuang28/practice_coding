@@ -10,7 +10,6 @@
 // A large-ended heap can be implemented using an array or a linked list data structure.
 // Large-ended heaps are commonly used in priority queues and sorting algorithms such as heapsort.
 // A large-ended heap can be transformed into a small-ended heap (min-heap) by changing the comparison operator used for the node values.
-// ? when the container is vector, the binary tree is auto-balanced to a heap. In other word, the rotation operation is conduced automatically.
 
 int upProcess(std::vector<int> &array, int k) {
     int k_parent;
@@ -25,10 +24,32 @@ int upProcess(std::vector<int> &array, int k) {
     return k_parent;
 }
 
+void buildHeap(std::vector<int> &array, int root) {
+    // sink for left child
+    int tmp_child_root = root * 2 + 1;
+    if (tmp_child_root < array.size()) {
+        if (array.at(root) < array.at(tmp_child_root)) {
+            std::swap(array.at(root), array.at(tmp_child_root));
+        }
+        buildHeap(array, tmp_child_root);
+    }
+    // sink for right child
+    tmp_child_root = root * 2 + 2;
+    if (tmp_child_root < array.size()) {
+        if (array.at(root) < array.at(tmp_child_root)) {
+            std::swap(array.at(root), array.at(tmp_child_root));
+        }
+        buildHeap(array, tmp_child_root);
+    }
+
+    return;
+}
+
 void heapSort(std::vector<int> &array) {
     if(array.empty()) {
         return;
     }
+    buildHeap(array, 0);
 
     // maximnal root heap
     for(int current = array.size() - 1; current > 0;) {
@@ -47,7 +68,7 @@ void heapSort(std::vector<int> &array) {
 
 int main(int argc, char const *argv[])
 {
-    std::vector<int> array({3, 1, 5, 6});
+    std::vector<int> array({5, 4, 2, 3, 1, 6});
     heapSort(array);
     for(int i = 0; i < array.size(); ++i) {
         std::cout << array[i] << std::endl;
