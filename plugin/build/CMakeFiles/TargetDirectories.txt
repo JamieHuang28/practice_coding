@@ -1,0 +1,4 @@
+/workspaces/practice_coding/plugin/build/CMakeFiles/rebuild_cache.dir
+/workspaces/practice_coding/plugin/build/CMakeFiles/host_app.dir
+/workspaces/practice_coding/plugin/build/CMakeFiles/edit_cache.dir
+/workspaces/practice_coding/plugin/build/CMakeFiles/AdditionPlugin.dir

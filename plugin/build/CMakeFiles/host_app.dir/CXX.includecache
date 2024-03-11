@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/workspaces/practice_coding/plugin/IPlugin.h
+
+/workspaces/practice_coding/plugin/main.cpp
+iostream
+-
+dlfcn.h
+-
+IPlugin.h
+/workspaces/practice_coding/plugin/IPlugin.h
+

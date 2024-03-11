@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,AdditionPlugin.so -o AdditionPlugin.so CMakeFiles/AdditionPlugin.dir/AdditionPlugin.cpp.o 
